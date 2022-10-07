@@ -20,7 +20,7 @@ server.use((req, res, next) => {
 })
 
 function checkUserExists(req, res, next) {
-  if(!req.body.user) {
+  if(!req.body.name) {
     return res.status(400).json({error: 'User name is required'});
   }
 
@@ -43,6 +43,7 @@ server.post('/users', checkUserExists, (req, res) => {
   const {name} = req.body;
 
   users.push(name);
+  
   return res.json(users);
 })
 
