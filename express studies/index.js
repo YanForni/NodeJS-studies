@@ -45,7 +45,7 @@ server.delete('/users/:index', (req, res) => {
 
   users.splice(index, 1);
 
-  return res.json(users);
+  return res.send();
 })
 
 server.listen(3000);
